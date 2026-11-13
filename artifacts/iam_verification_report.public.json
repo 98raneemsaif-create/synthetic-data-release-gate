@@ -1,0 +1,122 @@
+{
+    "project":  "synthetic-release-gate-2026",
+    "location":  "US",
+    "operator":  "REDACTED_OPERATOR",
+    "identities":  {
+                       "evaluator":  "srg-evaluator@synthetic-release-gate-2026.iam.gserviceaccount.com",
+                       "publisher":  "srg-publisher@synthetic-release-gate-2026.iam.gserviceaccount.com",
+                       "consumer":  "srg-consumer@synthetic-release-gate-2026.iam.gserviceaccount.com"
+                   },
+    "sql_read_tests":  9,
+    "audit_tests_executed":  true,
+    "results":  [
+                    {
+                        "name":  "evaluator-read-source",
+                        "expected":  "ALLOW",
+                        "observed":  "ALLOW",
+                        "status":  200
+                    },
+                    {
+                        "name":  "evaluator-read-candidate",
+                        "expected":  "ALLOW",
+                        "observed":  "ALLOW",
+                        "status":  200
+                    },
+                    {
+                        "name":  "evaluator-read-published",
+                        "expected":  "DENY",
+                        "observed":  "DENY",
+                        "status":  403
+                    },
+                    {
+                        "name":  "publisher-read-source",
+                        "expected":  "DENY",
+                        "observed":  "DENY",
+                        "status":  403
+                    },
+                    {
+                        "name":  "publisher-read-candidate",
+                        "expected":  "ALLOW",
+                        "observed":  "ALLOW",
+                        "status":  200
+                    },
+                    {
+                        "name":  "publisher-read-published",
+                        "expected":  "ALLOW",
+                        "observed":  "ALLOW",
+                        "status":  200
+                    },
+                    {
+                        "name":  "consumer-read-source",
+                        "expected":  "DENY",
+                        "observed":  "DENY",
+                        "status":  403
+                    },
+                    {
+                        "name":  "consumer-read-candidate",
+                        "expected":  "DENY",
+                        "observed":  "DENY",
+                        "status":  403
+                    },
+                    {
+                        "name":  "consumer-read-published",
+                        "expected":  "ALLOW",
+                        "observed":  "ALLOW",
+                        "status":  200
+                    },
+                    {
+                        "name":  "evaluator-write-candidate",
+                        "expected":  "ALLOW",
+                        "observed":  "ALLOW",
+                        "status":  200
+                    },
+                    {
+                        "name":  "evaluator-write-published",
+                        "expected":  "DENY",
+                        "observed":  "DENY",
+                        "status":  403
+                    },
+                    {
+                        "name":  "publisher-write-published",
+                        "expected":  "ALLOW",
+                        "observed":  "ALLOW",
+                        "status":  200
+                    },
+                    {
+                        "name":  "publisher-write-candidate",
+                        "expected":  "DENY",
+                        "observed":  "DENY",
+                        "status":  403
+                    },
+                    {
+                        "name":  "consumer-write-published",
+                        "expected":  "DENY",
+                        "observed":  "DENY",
+                        "status":  403
+                    },
+                    {
+                        "name":  "evaluator-read-audit",
+                        "expected":  "DENY",
+                        "observed":  "DENY",
+                        "status":  403
+                    },
+                    {
+                        "name":  "consumer-read-audit",
+                        "expected":  "DENY",
+                        "observed":  "DENY",
+                        "status":  403
+                    },
+                    {
+                        "name":  "publisher-write-audit",
+                        "expected":  "ALLOW",
+                        "observed":  "ALLOW",
+                        "status":  200
+                    }
+                ],
+    "all_tests_passed":  true,
+    "notes":  [
+                  "Negative tests pass only on HTTP 403.",
+                  "SQL jobs use maximumBytesBilled=10485760, the BigQuery minimum accepted limit.",
+                  "BigQuery-managed anonymous query results are not manually deleted and expire under BigQuery retention."
+              ]
+}

@@ -1,0 +1,439 @@
+{
+  "project": "synthetic-release-gate-2026",
+  "location": "US",
+  "operator_identity": "REDACTED_OPERATOR",
+  "publisher_identity": "srg-publisher@synthetic-release-gate-2026.iam.gserviceaccount.com",
+  "consumer_identity": "srg-consumer@synthetic-release-gate-2026.iam.gserviceaccount.com",
+  "schemas": {
+    "published_synthetic.customers": {
+      "exists": true,
+      "schema_matches": true,
+      "actual_schema": [
+        [
+          "customer_id",
+          "STRING"
+        ],
+        [
+          "region",
+          "STRING"
+        ],
+        [
+          "age_group",
+          "STRING"
+        ],
+        [
+          "release_id",
+          "STRING"
+        ]
+      ],
+      "expected_schema": [
+        [
+          "customer_id",
+          "STRING"
+        ],
+        [
+          "region",
+          "STRING"
+        ],
+        [
+          "age_group",
+          "STRING"
+        ],
+        [
+          "release_id",
+          "STRING"
+        ]
+      ]
+    },
+    "published_synthetic.orders": {
+      "exists": true,
+      "schema_matches": true,
+      "actual_schema": [
+        [
+          "order_id",
+          "STRING"
+        ],
+        [
+          "customer_id",
+          "STRING"
+        ],
+        [
+          "order_date",
+          "DATE"
+        ],
+        [
+          "status",
+          "STRING"
+        ],
+        [
+          "release_id",
+          "STRING"
+        ]
+      ],
+      "expected_schema": [
+        [
+          "order_id",
+          "STRING"
+        ],
+        [
+          "customer_id",
+          "STRING"
+        ],
+        [
+          "order_date",
+          "DATE"
+        ],
+        [
+          "status",
+          "STRING"
+        ],
+        [
+          "release_id",
+          "STRING"
+        ]
+      ]
+    },
+    "published_synthetic.order_items": {
+      "exists": true,
+      "schema_matches": true,
+      "actual_schema": [
+        [
+          "item_id",
+          "STRING"
+        ],
+        [
+          "order_id",
+          "STRING"
+        ],
+        [
+          "category",
+          "STRING"
+        ],
+        [
+          "quantity",
+          "INT64"
+        ],
+        [
+          "price",
+          "NUMERIC"
+        ],
+        [
+          "release_id",
+          "STRING"
+        ]
+      ],
+      "expected_schema": [
+        [
+          "item_id",
+          "STRING"
+        ],
+        [
+          "order_id",
+          "STRING"
+        ],
+        [
+          "category",
+          "STRING"
+        ],
+        [
+          "quantity",
+          "INT64"
+        ],
+        [
+          "price",
+          "NUMERIC"
+        ],
+        [
+          "release_id",
+          "STRING"
+        ]
+      ]
+    },
+    "published_synthetic.release_manifest": {
+      "exists": true,
+      "schema_matches": true,
+      "actual_schema": [
+        [
+          "release_id",
+          "STRING"
+        ],
+        [
+          "run_id",
+          "STRING"
+        ],
+        [
+          "content_hash",
+          "STRING"
+        ],
+        [
+          "policy_hash",
+          "STRING"
+        ],
+        [
+          "policy_version",
+          "STRING"
+        ],
+        [
+          "decision",
+          "STRING"
+        ],
+        [
+          "status",
+          "STRING"
+        ],
+        [
+          "committed_at",
+          "TIMESTAMP"
+        ],
+        [
+          "publisher_job_id",
+          "STRING"
+        ]
+      ],
+      "expected_schema": [
+        [
+          "release_id",
+          "STRING"
+        ],
+        [
+          "run_id",
+          "STRING"
+        ],
+        [
+          "content_hash",
+          "STRING"
+        ],
+        [
+          "policy_hash",
+          "STRING"
+        ],
+        [
+          "policy_version",
+          "STRING"
+        ],
+        [
+          "decision",
+          "STRING"
+        ],
+        [
+          "status",
+          "STRING"
+        ],
+        [
+          "committed_at",
+          "TIMESTAMP"
+        ],
+        [
+          "publisher_job_id",
+          "STRING"
+        ]
+      ]
+    },
+    "audit_private.audit_events": {
+      "exists": true,
+      "schema_matches": true,
+      "actual_schema": [
+        [
+          "event_id",
+          "STRING"
+        ],
+        [
+          "event_type",
+          "STRING"
+        ],
+        [
+          "run_id",
+          "STRING"
+        ],
+        [
+          "release_id",
+          "STRING"
+        ],
+        [
+          "content_hash",
+          "STRING"
+        ],
+        [
+          "policy_hash",
+          "STRING"
+        ],
+        [
+          "evaluation_decision",
+          "STRING"
+        ],
+        [
+          "publisher_decision",
+          "STRING"
+        ],
+        [
+          "verification_json",
+          "JSON"
+        ],
+        [
+          "error_reason",
+          "STRING"
+        ],
+        [
+          "event_timestamp",
+          "TIMESTAMP"
+        ],
+        [
+          "bigquery_job_id",
+          "STRING"
+        ]
+      ],
+      "expected_schema": [
+        [
+          "event_id",
+          "STRING"
+        ],
+        [
+          "event_type",
+          "STRING"
+        ],
+        [
+          "run_id",
+          "STRING"
+        ],
+        [
+          "release_id",
+          "STRING"
+        ],
+        [
+          "content_hash",
+          "STRING"
+        ],
+        [
+          "policy_hash",
+          "STRING"
+        ],
+        [
+          "evaluation_decision",
+          "STRING"
+        ],
+        [
+          "publisher_decision",
+          "STRING"
+        ],
+        [
+          "verification_json",
+          "JSON"
+        ],
+        [
+          "error_reason",
+          "STRING"
+        ],
+        [
+          "event_timestamp",
+          "TIMESTAMP"
+        ],
+        [
+          "bigquery_job_id",
+          "STRING"
+        ]
+      ]
+    }
+  },
+  "release_ids_unused": [
+    "srg-cloud-ambiguous-20261113-01",
+    "srg-cloud-audit-failure-20261113-01"
+  ],
+  "active_jobs": [],
+  "lock_release_id": "__srg_publication_lock__",
+  "fixture_rows": {
+    "customers": 30,
+    "orders": 64,
+    "order_items": 167
+  },
+  "fixture_decision": "APPROVED",
+  "lineage_status": "VERIFIED",
+  "candidate_hash_binding": true,
+  "max_bytes_billed": 104857600,
+  "privacy_disclaimer": "PIPELINE_ONLY_NOT_PRIVACY_SAFE",
+  "started_at": "2026-11-13T18:53:55.739889+00:00",
+  "ambiguous_commit": {
+    "status": "PASS",
+    "release_id": "srg-cloud-ambiguous-20261113-01",
+    "job_id": "314e39ff-2476-4420-9f00-df4e8fd4335b",
+    "transaction_id": null,
+    "counts": {
+      "customers": 30,
+      "orders": 64,
+      "order_items": 167,
+      "release_manifest": 1
+    },
+    "audit_events": [
+      {
+        "event_type": "PUBLICATION_COMMITTED",
+        "bigquery_job_id": null
+      },
+      {
+        "event_type": "PUBLICATION_INTENT",
+        "bigquery_job_id": null
+      }
+    ],
+    "consumer_hash": "b7c8fbd157769b44daa4f9d4896a3cf49c62f6a20afa68b52d84d548802dc8ee",
+    "already_committed": true
+  },
+  "audit_failure": {
+    "status": "PASS",
+    "release_id": "srg-cloud-audit-failure-20261113-01",
+    "job_id": "7bddf773-b7e8-4da3-90ee-a0653f7cd507",
+    "transaction_id": null,
+    "counts": {
+      "customers": 0,
+      "orders": 0,
+      "order_items": 0,
+      "release_manifest": 0
+    },
+    "audit_events": [
+      {
+        "event_type": "PUBLICATION_INTENT",
+        "bigquery_job_id": null
+      }
+    ],
+    "failure": {
+      "type": "BadRequest",
+      "message": "400 GET https://bigquery.googleapis.com/bigquery/v2/projects/synthetic-release-gate-2026/queries/7bddf773-b7e8-4da3-90ee-a0653f7cd507?maxResults=0&location=US&prettyPrint=false: Query error: Invalid input: syntax error while parsing object key - invalid literal; last read: '{no'; expected string literal; error in PARSE_JSON expression at [52:3]\n\nLocation: US\nJob ID: 7bddf773-b7e8-4da3-90ee-a0653f7cd507\n"
+    },
+    "failure_audit": "PERSISTED",
+    "publication_approved": false
+  },
+  "cleanup": {
+    "customers": {
+      "job_id": "165f71f4-3284-4516-aa8e-601609e12b6c",
+      "bytes_processed": 2038,
+      "bytes_billed": 10485760
+    },
+    "orders": {
+      "job_id": "a512ba0a-f166-4394-a9d7-340364ea6496",
+      "bytes_processed": 5790,
+      "bytes_billed": 10485760
+    },
+    "order_items": {
+      "job_id": "5838977f-5cff-4da2-ba7f-e0fa9f20f5ce",
+      "bytes_processed": 17466,
+      "bytes_billed": 10485760
+    },
+    "release_manifest": {
+      "job_id": "91eec81e-697d-440a-9513-de4e05f222bc",
+      "bytes_processed": 313,
+      "bytes_billed": 10485760
+    }
+  },
+  "cleanup_reconciliation": {
+    "srg-cloud-ambiguous-20261113-01": {
+      "customers": 0,
+      "orders": 0,
+      "order_items": 0,
+      "release_manifest": 0
+    },
+    "srg-cloud-audit-failure-20261113-01": {
+      "customers": 0,
+      "orders": 0,
+      "order_items": 0,
+      "release_manifest": 0
+    }
+  },
+  "status": "PASS"
+}

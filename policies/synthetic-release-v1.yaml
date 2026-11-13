@@ -1,0 +1,15 @@
+policy_id: synthetic-release
+policy_version: '1.0.0'
+quality:
+  min_fidelity_per_table: 0.80
+privacy:
+  max_exact_match_rate: 0.01
+  critical_exact_match_rate: 0.20
+  # DCR is disabled until a calibration artifact exists; never treat missing DCR as a PASS.
+  dcr_enabled: false
+integrity:
+  max_foreign_key_violations: 0
+  max_constraint_violations: 0
+  max_duplicate_primary_keys: 0
+release:
+  require_all_checks: true

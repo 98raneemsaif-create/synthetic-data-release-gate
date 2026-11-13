@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "synthetic-release-gate"
+version = "0.2.1"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0,<3", "PyYAML>=6,<7"]
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+sdv = ["sdv==1.17.0", "rdt==1.14.0"]
+cloud = ["google-cloud-bigquery>=3.25,<4", "google-auth>=2.35,<3"]
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+srg-generate = "gate.generate_cli:main"
+srg-measure = "gate.measure_cli:main"
+srg-publish = "gate.publisher:main"

@@ -5,8 +5,11 @@ quality and risk, evaluates a versioned YAML policy, and blocks publication
 unless the evidence is internally consistent and the resulting decision is
 `APPROVED`.
 
-Current status: **Milestones 1–4 are verified for the implemented local and
-controlled cloud-fixture scope. This is not production or privacy readiness.**
+### Project Background
+
+**Synthetic Data Release Gate** is an independent project developed during the **Data Engineering on Google Cloud Bootcamp** at [Tuwaiq Academy](https://github.com/Tuwaiq-Academy-Training), Saudi Arabia.
+
+The project was designed and implemented as a practical data engineering solution, focusing on synthetic data evaluation, policy-based release decisions, and controlled publication on Google Cloud.
 
 ## Architecture and data flow
 
